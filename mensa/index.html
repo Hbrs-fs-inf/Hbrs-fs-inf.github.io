@@ -8,6 +8,7 @@
     :root {
       --side-margin: 140px;
       --bg: rgba(59,130,246,0.15);
+      --zoom: 1.3;
     }
 
     html, body {
@@ -17,24 +18,31 @@
       height: 100%;
       overflow: hidden;
       background: var(--bg);
-      zoom: 1.2;
+    }
+
+    .viewport {
+      position: fixed;
+      top: 0;
+      left: var(--side-margin);
+      right: var(--side-margin);
+      bottom: 0;
+      overflow: hidden;
+      background: var(--bg);
     }
 
     iframe {
-      display: block;
       border: none;
-      height: 100vh;
-      width: calc(100vw - (2 * var(--side-margin)));
-      margin-left: var(--side-margin);
-      margin-right: var(--side-margin);
-      background: transparent;
+      display: block;
+      width: calc(100% / var(--zoom));
+      height: calc(100% / var(--zoom));
+      transform: scale(var(--zoom));
+      transform-origin: top left;
     }
   </style>
 </head>
 <body>
-  <iframe
-    src="https://mensa.woses.de"
-    title="Mensa">
-  </iframe>
+  <div class="viewport">
+    <iframe src="https://mensa.woses.de" title="Mensa"></iframe>
+  </div>
 </body>
 </html>
