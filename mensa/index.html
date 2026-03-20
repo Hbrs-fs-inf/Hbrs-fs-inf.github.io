@@ -2,14 +2,19 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Mensaplan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iframe Ansicht</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
+      width: 100%;
       height: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
     }
-    object {
+
+    iframe {
       width: 100%;
       height: 100%;
       border: none;
@@ -17,7 +22,9 @@
   </style>
 </head>
 <body>
-  <object data="https://www.maxmanager.de/daten-extern/sw-bonn/pdf/wochenplaene/1/aktuell_de.pdf#view=Fit&amp;toolbar=0" type="application/pdf">
-  </object>
+  <iframe
+    src="https://mensa.woses.de"
+    title="Mensa">
+  </iframe>
 </body>
 </html>
